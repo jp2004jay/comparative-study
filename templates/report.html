@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Analysis Report</h1>
+        <h2>Exploratory Data Analysis</h2>
+        <pre>{{ eda_report['info'] }}</pre>
+        <h3>Summary Statistics</h3>
+        <div class="overflow">
+            {{ eda_report['describe'] | safe }}
+        </div>
+        <h3>Missing Values</h3>
+        <div class="overflow">
+            <pre>{{ eda_report['missing_values'] }}</pre>
+        </div>
+        <h3>Duplicate Rows</h3>
+        <pre>{{ eda_report['duplicates'] }}</pre>
+
+        <h2>Model Performance</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+            </tr>
+            {% for model, accuracy in results.items() %}
+            <tr>
+                <td>{{ model }}</td>
+                <td>{{ accuracy | round(4) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{{ url_for('index') }}">Upload Another Dataset</a>
+    </div>
+</body>
+
+</html>
