@@ -35,7 +35,7 @@ cd comparative-study
 
 1. Start the Flask app:
    ```bash
-   python comparative_study.py
+   python app.py
    ```
 
 2. Open your web browser and navigate to:
@@ -60,7 +60,7 @@ comparative-study/
 │-- static/                 # Static files (CSS, JS)
 │   ├── styles.css          # Styling
 │   ├── script.js           # Client-side script
-│-- comparative_study.py    # Main Flask application
+│-- app.py    # Main Flask application
 │-- README.md               # Project documentation
 ```
 
