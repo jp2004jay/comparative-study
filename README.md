@@ -27,7 +27,7 @@ pip install flask pandas seaborn matplotlib numpy scikit-learn
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/comparative-study.git
+git clone https://github.com/jp2004jay/comparative-study.git
 cd comparative-study
 ```
 
